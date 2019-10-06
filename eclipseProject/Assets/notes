@@ -1,0 +1,60 @@
+sizes in pixels
+	
+/	player 11x18
+/	background 240x131
+/	block 8x8
+	logo 10x10
+	
+/	visible weapons
+/		sword 7x5
+/		gun, all the same  4x3
+/		on field bomb 10x10
+			kickable
+		Fire from ant   10x10
+		
+	items 8x8
+/		gun
+/			slow fire shotgun    25 dam
+/			3-round ak           15
+/			rapid fire machine   3
+/		sword
+/		pickable bomb ammo
+/		bomb gun
+/		gun ammo
+		effects
+			speed
+			health
+			strength
+			invincible
+			infinate ammo
+	
+	enemies
+		zombie 11x18
+		gunman 11x18
+		bomberman 11x18
+		
+	bosses
+/		ant 4x3 
+		lama 20x25
+/		joe 11x 18
+
+
+how to
+
+public void test() {
+		shader = new Shader("Shader_Grad");
+		texture = new Texture("swordItem");
+		
+		projection = new Matrix4f()
+	                                  .ortho2D((-1 * Window.getWidth()) / 2, Window.getWidth() / 2, -1 * Window.getHeight(), Window.getHeight());
+		scale = new Matrix4f()        .translate(new Vector3f(0, 0, 0))
+				  					  .scale(50);  
+	}
+	
+old render
+		shader.bind();
+		shader.setUniform("sampler", 0);
+		shader.setUniform("projection", target);
+		texture.bind(0);
+		model.render();
+		
